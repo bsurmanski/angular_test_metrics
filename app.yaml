@@ -1,0 +1,19 @@
+runtime: python27
+threadsafe: true
+api_version: 1
+
+skip_files:
+- node_modules/.*
+- src/.*
+
+handlers:
+- url: /rest/.*
+  script: main.app
+
+- url: /
+  static_files: dist/metrics-app/index.html
+  upload: dist/metrics-app/index.html
+
+- url: /(.*\.(js|html|css|map))$
+  static_files: dist/metrics-app/\1
+  upload: dist/metrics-app/.*\.(js|html|css|map)$
