@@ -8,7 +8,7 @@ skip_files:
 
 handlers:
 - url: /rest/.*
-  script: main.app
+  script: server.server.app
 
 - url: /
   static_files: dist/metrics-app/index.html
